@@ -10,7 +10,8 @@ Aktywuj lokalnie serwer dostępny pod linkiem (https://github.com/AllForOnePolan
 
 Demo jest dostępne online pod linkiem (https://testtaskrpa.onrender.com/SeeAllReports)
 
-## Możesz też uruchomić frontend lokalnie
+## Możesz też uruchomić frontend lokalnie, przejdź do folderu frontend a następnie użyj komend:
 
 ### npm install
+
 ### npm start
