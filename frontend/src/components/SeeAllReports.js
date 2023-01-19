@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AxiosInstance from "./AxiosInstance";
 import { Table } from "antd"; 
+import moment from "moment/moment";
 
 export default function SeeAllReports() {
   const [data, setData] = useState([]);
@@ -41,7 +42,8 @@ export default function SeeAllReports() {
     {
         title: "date",
         dataIndex: "date",
-        width: 150
+        width: 150,
+        sorter: (a, b) => { return moment(a.date).unix() - moment(b.date).unix()}
     },
     {
         title: "edit",
