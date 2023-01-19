@@ -19,7 +19,12 @@ export default function SeeAllReports() {
     {
         title: "temperature",
         dataIndex: "temperature",
-        width: 150
+        width: 150,
+        sortDirections: ['descend', 'ascend'],
+        sorter: {
+          compare: (a, b) => a.temperature - b.temperature,
+          multiple: 3,
+        },
     },
     {
         title: "unit",
@@ -29,7 +34,9 @@ export default function SeeAllReports() {
     {
         title: "city",
         dataIndex: "city",
-        width: 150
+        width: 150,
+        sortDirections: ['descend', 'ascend'],
+        sorter: (a, b) => { return a.city.localeCompare(b.city)},
     },
     {
         title: "date",
