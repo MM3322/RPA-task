@@ -15,9 +15,9 @@ const validationSchema = yup.object({
     .oneOf(['F', 'C', 'K', ],"The unit has to be F, C or K")
     .required('Unit is required'),
   date: yup
-    .string('Enter your password')
-    .min(2, 'Password should be of minimum 1 characters length')
-    .required('Password is required'),
+    .string('Date')
+    .required('Date is required')
+    .matches(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/, "Date has to be in the format of YYYY-MM-DD"),
   city: yup
     .string('City')
     .required('City is required'),
@@ -57,6 +57,7 @@ const CreateNewReport = () => {
           id="temperature"
           name="temperature"
           label="Temperature"
+          type="number"
           value={formik.values.temperature}
           onChange={formik.handleChange}
           error={formik.touched.temperature && Boolean(formik.errors.temperature)}
